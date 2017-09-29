@@ -3,17 +3,13 @@
 <head>
     <meta charset=utf-8 />
     <title>source</title>
-    <style>
-    #wrap {width: 350px;
-            height: 350px;}
-    #wrap div {width: 100px;
-      height: 100px;
-      float: left;}
+    <style media="screen">
+        #board{width: 400px; height: 400px; float: left;}
+        #board span{width: 100px; height: 100px; float: left;}
+          .black{background: #000000}
     </style>
 </head>
 <body>
-
-
 
 <div id="board">
     <!-- 이 HTML을 자바스크립트로 추가하면 됩니다.
@@ -34,16 +30,25 @@
       <span class="white"></span>
       <span class="black"></span>
     //-->
+
+
 </div>
-<script src="app3-2.js"></script>
 <script>
     var board = document.getElementById("board");
+    var span = "";
     for(var i=0; i<4; i++){
         for(var j=0; j<4; j++){
-            // TODO : 여기에 필요한 코드를 작성해주세요.
-
+          span += "<span "
+          if((i+j)%2 == 0){
+              span += 'class = "black" '
+          }
+          span += "></span>"
+            //board.appendChild(span);
         }
-    }
+      }
+      board.innerHTML += span;
+
+      //board.innerHTML = add;
 </script>
 </body>
 </html>
